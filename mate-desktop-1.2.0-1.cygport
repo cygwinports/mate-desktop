@@ -1,0 +1,15 @@
+inherit mate
+
+
+PKG_NAMES="mate-desktop libmate-desktop2_17 libmate-desktop2-devel"
+mate_desktop_CONTENTS="--exclude=gtk-doc usr/bin/mate-about.exe usr/share/"
+libmate_desktop2_17_CONTENTS="usr/bin/cygmate-desktop-2-17.dll"
+libmate_desktop2_devel_CONTENTS="usr/include/ usr/lib/ usr/share/gtk-doc/"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# conflicts with gnome-desktop
+	rm -fr ${D}/usr/share/omf/{fdl,gpl,lgpl}
+}
