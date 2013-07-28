@@ -1,7 +1,7 @@
 inherit mate
 
 NAME="mate-desktop"
-VERSION=1.6.0
+VERSION=1.6.1
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE about dialog and desktop data files"
@@ -10,8 +10,10 @@ and attractive desktop to Linux users using traditional metaphors."
 
 PKG_NAMES="mate-desktop libmate-desktop2_17 libmate-desktop2-devel"
 mate_desktop_CONTENTS="--exclude=gtk-doc etc/ usr/bin/mate-about.exe usr/share/"
+libmate_desktop2_17_CATEGORY="Libs"
 libmate_desktop2_17_SUMMARY="MATE desktop API library (runtime)"
 libmate_desktop2_17_CONTENTS="usr/bin/cygmate-desktop-2-17.dll"
+libmate_desktop2_devel_CATEGORY="Libs"
 libmate_desktop2_devel_SUMMARY="MATE desktop API library (development)"
 libmate_desktop2_devel_CONTENTS="usr/include/ usr/lib/ usr/share/gtk-doc/"
 
