@@ -1,21 +1,26 @@
 inherit mate
 
 NAME="mate-desktop"
-VERSION=1.6.1
+VERSION=1.8.0
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE about dialog and desktop data files"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
 
-PKG_NAMES="mate-desktop libmate-desktop2_17 libmate-desktop2-devel"
-mate_desktop_CONTENTS="--exclude=gtk-doc etc/ usr/bin/mate-about.exe usr/share/"
+PKG_NAMES="mate-desktop libmate-desktop2_17 libmate-desktop2-devel libmate-desktop2-doc"
+mate_desktop_CONTENTS="--exclude=gtk-doc etc/ usr/bin/m* usr/share/"
 libmate_desktop2_17_CATEGORY="Libs"
 libmate_desktop2_17_SUMMARY="MATE desktop API library (runtime)"
 libmate_desktop2_17_CONTENTS="usr/bin/cygmate-desktop-2-17.dll"
 libmate_desktop2_devel_CATEGORY="Libs"
 libmate_desktop2_devel_SUMMARY="MATE desktop API library (development)"
-libmate_desktop2_devel_CONTENTS="usr/include/ usr/lib/ usr/share/gtk-doc/"
+libmate_desktop2_devel_CONTENTS="usr/include/ usr/lib/"
+libmate_desktop2_doc_CATEGORY="Doc"
+libmate_desktop2_doc_SUMMARY="MATE desktop API library (documentation)"
+libmate_desktop2_doc_CONTENTS="usr/share/gtk-doc/"
+
+CYGCONF_ARGS="--enable-mpaste"
 
 src_install() {
 	cd ${B}
