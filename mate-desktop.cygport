@@ -1,24 +1,43 @@
 inherit mate
 
 NAME="mate-desktop"
-VERSION=1.8.1
+VERSION=1.10.2
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE about dialog and desktop data files"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
 
-PKG_NAMES="mate-desktop libmate-desktop2_17 libmate-desktop2-devel libmate-desktop2-doc"
-mate_desktop_CONTENTS="--exclude=gtk-doc etc/ usr/bin/m* usr/share/"
+PKG_NAMES="mate-desktop mate-desktop-schemas mate-user-guide
+	   libmate-desktop2_17 libmate-desktop2-common libmate-desktop2-devel
+	   libmate-desktop2-doc girepository-MateDesktop2.0"
+mate_desktop_REQUIRES="mate-user-guide"
+mate_desktop_CONTENTS="
+	usr/bin/m*
+	usr/share/applications/
+	usr/share/doc/
+	usr/share/mate-about/
+	usr/share/man/man1/
+"
+mate_desktop_schemas_CONTENTS="etc/ usr/share/MateConf/ usr/share/glib-2.0/schemas/"
+mate_user_guide_CONTENTS="usr/share/help/"
 libmate_desktop2_17_CATEGORY="Libs"
 libmate_desktop2_17_SUMMARY="MATE desktop API library (runtime)"
+libmate_desktop2_17_REQUIRES="libmate-desktop2-common"
 libmate_desktop2_17_CONTENTS="usr/bin/cygmate-desktop-2-17.dll"
+libmate_desktop2_common_CATEGORY="Libs"
+libmate_desktop2_common_SUMMARY="MATE desktop API library (runtime data)"
+libmate_desktop2_common_REQUIRES="mate-desktop-schemas"
+libmate_desktop2_common_CONTENTS="usr/share/libmate-desktop/ usr/share/locale/"
 libmate_desktop2_devel_CATEGORY="Libs"
 libmate_desktop2_devel_SUMMARY="MATE desktop API library (development)"
-libmate_desktop2_devel_CONTENTS="usr/include/ usr/lib/"
+libmate_desktop2_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
 libmate_desktop2_doc_CATEGORY="Doc"
 libmate_desktop2_doc_SUMMARY="MATE desktop API library (documentation)"
 libmate_desktop2_doc_CONTENTS="usr/share/gtk-doc/"
+girepository_MateDesktop2_0_CATEGORY="Libs"
+girepository_MateDesktop2_0_SUMMARY="MATE desktop API library (GObject Introspection)"
+girepository_MateDesktop2_0_CONTENTS="usr/*/gir*/MateDesktop-2.0.*"
 
 CYGCONF_ARGS="--enable-mpaste"
 
