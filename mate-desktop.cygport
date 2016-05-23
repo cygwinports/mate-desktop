@@ -1,26 +1,27 @@
 inherit mate
 
 NAME="mate-desktop"
-VERSION=1.10.2
+VERSION=1.14.1
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE about dialog and desktop data files"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
 
-PKG_NAMES="mate-desktop mate-desktop-schemas mate-user-guide
+PKG_NAMES="mate-desktop mate-desktop-schemas
 	   libmate-desktop2_17 libmate-desktop2-common libmate-desktop2-devel
 	   libmate-desktop2-doc girepository-MateDesktop2.0"
 mate_desktop_REQUIRES="mate-user-guide"
 mate_desktop_CONTENTS="
+	etc/
 	usr/bin/m*
 	usr/share/applications/
 	usr/share/doc/
+	usr/share/icons/
 	usr/share/mate-about/
 	usr/share/man/man1/
 "
-mate_desktop_schemas_CONTENTS="etc/ usr/share/MateConf/ usr/share/glib-2.0/schemas/"
-mate_user_guide_CONTENTS="usr/share/help/"
+mate_desktop_schemas_CONTENTS="usr/share/glib-2.0/schemas/"
 libmate_desktop2_17_CATEGORY="Libs"
 libmate_desktop2_17_SUMMARY="MATE desktop API library (runtime)"
 libmate_desktop2_17_REQUIRES="libmate-desktop2-common"
