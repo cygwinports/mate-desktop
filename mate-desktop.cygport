@@ -5,8 +5,9 @@ VERSION=1.14.1
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE about dialog and desktop data files"
-DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
-and attractive desktop to Linux users using traditional metaphors."
+DESCRIPTION="The MATE Desktop Environment is the continuation of GNOME 2. It
+provides an intuitive and attractive desktop environment using traditional
+metaphors for Linux and other Unix-like operating systems."
 
 PKG_NAMES="mate-desktop mate-desktop-schemas
 	   libmate-desktop2_17 libmate-desktop2-common libmate-desktop2-devel
