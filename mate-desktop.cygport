@@ -1,7 +1,7 @@
 inherit mate
 
 NAME="mate-desktop"
-VERSION=1.14.1
+VERSION=1.16.1
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE about dialog and desktop data files"
@@ -41,7 +41,7 @@ girepository_MateDesktop2_0_CATEGORY="Libs"
 girepository_MateDesktop2_0_SUMMARY="MATE desktop API library (GObject Introspection)"
 girepository_MateDesktop2_0_CONTENTS="usr/*/gir*/MateDesktop-2.0.*"
 
-CYGCONF_ARGS="--enable-mpaste"
+CYGCONF_ARGS="--with-gtk=3.0"
 
 src_install() {
 	cd ${B}
